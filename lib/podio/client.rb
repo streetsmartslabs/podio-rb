@@ -4,13 +4,13 @@ module Podio
     attr_accessor :stubs, :current_http_client, :headers
 
     def initialize(options = {})
-      @api_url = options[:api_url] || 'https://api.podio.com'
-      @api_key = options[:api_key]
-      @api_secret = options[:api_secret]
-      @logger = options[:logger] || Podio::StdoutLogger.new(options[:debug])
-      @oauth_token = options[:oauth_token]
-      @headers = options[:custom_headers] || {}
-      @adapter = options[:adapter] || Faraday.default_adapter
+      @api_url         = options[:api_url] || 'https://api.podio.com'
+      @api_key         = options[:api_key]
+      @api_secret      = options[:api_secret]
+      @logger          = options[:logger] || Podio::StdoutLogger.new(options[:debug])
+      @oauth_token     = options[:oauth_token]
+      @headers         = options[:custom_headers] || {}
+      @adapter         = options[:adapter] || Faraday.default_adapter
       @request_options = options[:request_options] || {}
 
       if options[:enable_stubs]
